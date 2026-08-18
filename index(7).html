@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polityka prywatności SmartBudget</title>
+  <meta name="description" content="Polityka prywatności aplikacji SmartBudget.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5f6b7a;
+      --accent: #0f766e;
+      --border: #e5e7eb;
+      --note: #ecfdf5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111827;
+        --card: #18212f;
+        --text: #f3f4f6;
+        --muted: #c3cad4;
+        --accent: #5eead4;
+        --border: #334155;
+        --note: #12352f;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 18px 56px;
+    }
+    article {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.04);
+    }
+    h1 { margin-top: 0; font-size: clamp(1.8rem, 4vw, 2.4rem); }
+    h2 { margin-top: 2rem; font-size: 1.25rem; }
+    h3 { margin-top: 1.25rem; font-size: 1.05rem; }
+    p, li { font-size: 1rem; }
+    .meta { color: var(--muted); margin-top: -.5rem; }
+    .summary {
+      background: var(--note);
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+    }
+    a { color: var(--accent); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: rgba(127,127,127,.12);
+      padding: .08rem .3rem;
+      border-radius: 5px;
+    }
+    ul { padding-left: 1.3rem; }
+    footer { color: var(--muted); margin-top: 2rem; font-size: .92rem; }
+  </style>
+</head>
+<body>
+<main>
+<article>
+  <h1>Polityka prywatności SmartBudget</h1>
+  <p class="meta"><strong>Ostatnia aktualizacja:</strong> 18 sierpnia 2026 r.</p>
+  <p class="meta"><strong>Kontakt w sprawach prywatności:</strong> <a href="mailto:3000charly@gmail.com">3000charly@gmail.com</a></p>
+
+  <div class="summary">
+    <strong>Najważniejsze w skrócie:</strong> SmartBudget przechowuje podstawowe dane budżetowe lokalnie na urządzeniu. Funkcja analizy AI wysyła do usług Google tylko zagregowane podsumowanie budżetu potrzebne do wykonania analizy. Wersja bezpłatna może wyświetlać reklamy Google AdMob, a zgody reklamowe są obsługiwane przez Google User Messaging Platform (UMP). Zakupy Pro obsługuje Google Play.
+  </div>
+
+  <h2>1. Zakres polityki</h2>
+  <p>Niniejsza polityka dotyczy aplikacji mobilnej <strong>SmartBudget</strong> na Androida. Wyjaśnia, jakie dane mogą być przetwarzane podczas korzystania z aplikacji, w jakim celu są używane, z jakich usług zewnętrznych korzysta aplikacja oraz w jaki sposób użytkownik może usunąć dane lub zmienić ustawienia prywatności.</p>
+
+  <h2>2. Dane przechowywane lokalnie na urządzeniu</h2>
+  <p>SmartBudget działa przede wszystkim lokalnie. Dane wprowadzane przez użytkownika są zapisywane w pamięci aplikacji na urządzeniu (lokalna pamięć WebView / <code>localStorage</code>). Mogą obejmować:</p>
+  <ul>
+    <li>przychody, wydatki, kwoty, kategorie, opisy i daty transakcji,</li>
+    <li>ustawienia budżetu, dzień wypłaty i dzienny limit wydatków,</li>
+    <li>opcjonalne dane profilu wprowadzone przez użytkownika, takie jak nazwa/imię i adres,</li>
+    <li>cele oszczędnościowe i historię wpłat,</li>
+    <li>wydatki cykliczne, listę używanych sklepów i dane modułu sprzedaży online,</li>
+    <li>zdjęcia paragonów przypisane do transakcji,</li>
+    <li>lokalny status planu Free/Pro i liczniki wykorzystania funkcji AI.</li>
+  </ul>
+  <p>Dane te nie są automatycznie synchronizowane z własnym serwerem wydawcy. Użytkownik może samodzielnie eksportować wybrane dane lub skopiować je do schowka przy użyciu funkcji aplikacji.</p>
+
+  <h2>3. Paragony, aparat, galeria i OCR</h2>
+  <p>Jeżeli użytkownik wybierze dodanie paragonu, aplikacja może otworzyć aparat lub systemowy wybór obrazu. Zdjęcie jest używane do podglądu, opcjonalnego OCR oraz zapisania przy transakcji. Zdjęcie wykonane aparatem może być tymczasowo przechowywane w pamięci podręcznej aplikacji.</p>
+  <p>Rozpoznawanie tekstu z paragonu wykorzystuje bibliotekę Tesseract.js uruchamianą w aplikacji. Aplikacja pobiera bibliotekę OCR przez sieć z usługi jsDelivr, dlatego do OCR wymagane może być połączenie z internetem. Obraz paragonu nie jest wysyłany do funkcji analizy AI SmartBudget.</p>
+
+  <h2>4. Analiza AI</h2>
+  <p>Funkcja „Analiza AI” działa przez Firebase AI Logic / usługi Google AI i jest uruchamiana wyłącznie na żądanie użytkownika. Do analizy przekazywane jest zagregowane podsumowanie bieżącego cyklu budżetowego, w szczególności:</p>
+  <ul>
+    <li>łączny przychód, wydatki i pozostały budżet,</li>
+    <li>liczba dni do wypłaty,</li>
+    <li>średni wydatek dzienny,</li>
+    <li>wartość największego pojedynczego wydatku,</li>
+    <li>sumy wydatków według kategorii.</li>
+  </ul>
+  <p>Do analizy AI nie są przekazywane zdjęcia paragonów, nazwa sklepu z konkretnej transakcji, notatki transakcji ani opcjonalna nazwa/imię i adres z profilu użytkownika. Dane wysłane do usług Google podlegają zasadom i warunkom odpowiednich usług Google/Firebase.</p>
+
+  <h2>5. Reklamy i zgody — Google AdMob i UMP</h2>
+  <p>Wersja bezpłatna SmartBudget może wyświetlać reklamy przez <strong>Google AdMob</strong>. Użytkownicy SmartBudget Pro nie powinni otrzymywać reklam w aplikacji.</p>
+  <p>Google Mobile Ads SDK może automatycznie przetwarzać dane techniczne potrzebne do dostarczania reklam, analityki i zapobiegania nadużyciom, w tym m.in. adres IP, informacje o interakcjach z reklamami i aplikacją, dane diagnostyczne oraz identyfikatory urządzenia lub konta dostępne dla usług Google.</p>
+  <p>W regionach, w których jest to wymagane, SmartBudget korzysta z <strong>Google User Messaging Platform (UMP)</strong> do przedstawienia użytkownikowi wyborów dotyczących zgody. W zależności od decyzji użytkownika i wymogów prawnych Google może ograniczyć personalizację reklam lub zastosować inne dozwolone tryby wyświetlania reklam. Jeżeli UMP wymaga udostępnienia punktu wejścia do ponownej zmiany ustawień, aplikacja udostępnia opcję prywatności reklam.</p>
+
+  <h2>6. Zakup SmartBudget Pro</h2>
+  <p>Zakup SmartBudget Pro jest obsługiwany przez <strong>Google Play Billing</strong>. SmartBudget otrzymuje od Google Play informacje niezbędne do sprawdzenia dostępności produktu oraz statusu zakupu/posiadania Pro. Aplikacja nie otrzymuje numeru karty płatniczej ani pełnych danych płatniczych użytkownika.</p>
+
+  <h2>7. Bezpieczeństwo aplikacji — Firebase App Check i Play Integrity</h2>
+  <p>SmartBudget korzysta z Firebase App Check oraz Google Play Integrity, aby ograniczać dostęp do chronionych usług z nieautoryzowanych lub zmodyfikowanych instalacji. W tym celu Google może przetwarzać sygnały techniczne dotyczące integralności aplikacji, instalacji i urządzenia. Sygnały te służą ochronie usług i zapobieganiu nadużyciom.</p>
+
+  <h2>8. Usługi zewnętrzne</h2>
+  <p>W zależności od używanych funkcji SmartBudget korzysta z usług następujących dostawców:</p>
+  <ul>
+    <li><strong>Google Play</strong> — dystrybucja aplikacji, zakupy Pro i Play Integrity,</li>
+    <li><strong>Firebase / Google AI</strong> — analiza AI i App Check,</li>
+    <li><strong>Google AdMob / UMP</strong> — reklamy i zarządzanie zgodami,</li>
+    <li><strong>jsDelivr</strong> — dostarczenie biblioteki OCR Tesseract.js.</li>
+  </ul>
+  <p>Usługi zewnętrzne mogą przetwarzać dane zgodnie z własnymi politykami prywatności, warunkami świadczenia usług i ustawieniami skonfigurowanymi przez wydawcę aplikacji.</p>
+
+  <h2>9. Okres przechowywania i usuwanie danych</h2>
+  <p>Dane budżetowe przechowywane lokalnie pozostają na urządzeniu do czasu ich usunięcia przez użytkownika, wyczyszczenia danych aplikacji lub odinstalowania aplikacji. SmartBudget udostępnia funkcję <strong>„Resetuj dane”</strong>, która usuwa lokalne dane aplikacji.</p>
+  <p>Użytkownik może również usunąć pojedyncze transakcje i powiązane z nimi dane w ramach dostępnych funkcji aplikacji. Pliki tymczasowe aparatu znajdujące się w pamięci podręcznej mogą być usuwane przez system Android lub po wyczyszczeniu pamięci podręcznej/danych aplikacji.</p>
+  <p>Dane przetwarzane przez zewnętrzne usługi Google podlegają okresom przechowywania i zasadom tych usług.</p>
+
+  <h2>10. Bezpieczeństwo danych</h2>
+  <p>SmartBudget ogranicza przechowywanie danych budżetowych głównie do urządzenia użytkownika. Połączenia sieciowe z usługami zewnętrznymi korzystają ze standardowych zabezpieczonych połączeń HTTPS. Aplikacja używa mechanizmów Firebase App Check i Play Integrity do ochrony dostępu do funkcji AI.</p>
+  <p>Żaden sposób przechowywania lub przesyłania danych nie daje jednak absolutnej gwarancji bezpieczeństwa.</p>
+
+  <h2>11. Uprawnienia i dostęp do funkcji urządzenia</h2>
+  <p>Aplikacja korzysta z dostępu do internetu w celu obsługi funkcji sieciowych, takich jak AI, OCR, reklamy, zgody i zakupy. Aparat lub galeria są otwierane tylko wtedy, gdy użytkownik wybierze funkcję dodania paragonu.</p>
+
+  <h2>12. Prawa i wybory użytkownika</h2>
+  <p>Użytkownik może w szczególności:</p>
+  <ul>
+    <li>usunąć dane lokalne przez funkcję „Resetuj dane” lub wyczyszczenie danych/odinstalowanie aplikacji,</li>
+    <li>usunąć wybrane transakcje i zapisane paragony,</li>
+    <li>nie korzystać z opcjonalnej analizy AI,</li>
+    <li>zarządzać zgodą reklamową, gdy taka opcja jest wymagana i udostępniana przez UMP,</li>
+    <li>skontaktować się w sprawach prywatności pod adresem <a href="mailto:3000charly@gmail.com">3000charly@gmail.com</a>.</li>
+  </ul>
+  <p>SmartBudget nie wymaga utworzenia własnego konta użytkownika u wydawcy aplikacji.</p>
+
+  <h2>13. Dzieci</h2>
+  <p>SmartBudget jest ogólnym narzędziem do zarządzania budżetem i nie jest projektowany jako aplikacja skierowana specjalnie do dzieci. Jeżeli sposób dystrybucji lub grupa docelowa aplikacji ulegnie zmianie, odpowiednie ustawienia reklam i prywatności zostaną dostosowane.</p>
+
+  <h2>14. Zmiany polityki prywatności</h2>
+  <p>Polityka może być aktualizowana wraz ze zmianami funkcji SmartBudget, usług zewnętrznych lub wymogów prawnych i platformowych. Data ostatniej aktualizacji jest podana na początku dokumentu.</p>
+
+  <h2>15. Przydatne informacje dostawców usług</h2>
+  <ul>
+    <li><a href="https://policies.google.com/privacy" rel="noopener noreferrer">Polityka prywatności Google</a></li>
+    <li><a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Firebase — prywatność i bezpieczeństwo</a></li>
+    <li><a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">Google — technologie reklamowe</a></li>
+    <li><a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" rel="noopener noreferrer">jsDelivr — polityka prywatności</a></li>
+  </ul>
+
+  <footer>
+    Ta polityka opisuje aktualną funkcjonalność SmartBudget i powinna być aktualizowana, jeśli aplikacja zacznie korzystać z nowych rodzajów danych, nowych usług zewnętrznych albo zmieni sposób przechowywania lub przesyłania danych.
+  </footer>
+</article>
+</main>
+</body>
+</html>
